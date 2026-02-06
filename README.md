@@ -1,27 +1,101 @@
-# Precio-de-acciones-de-Meta
-Predicción de Precios de Acciones de Meta Platforms usando Series Temporales
+# 📈Pronóstico del precio de las acciones y análisis de series temporales de Meta
 
+Este proyecto realiza un análisis completo de series temporales y pronóstico del precio de las acciones de Meta Platforms Inc. (META) utilizando enfoques estadísticos clásicos y modelos de machine learning y deep learning.
 
-Se desarrollo un sistema de análisis y predicción para los precios de las acciones de Meta Platforms (Facebook), utilizando técnicas avanzadas de análisis de series temporales, modelos estadísticos y redes neuronales híbridas.
-Herramientas utilizadas: python, numpy, pandas, matplotlib, neuralprophet, seaborn, scipy, statsmodels, pmdarima, sklearn y math.
-**Preparación y análisis de datos:**
-Procesamiento de datos históricos (2012-2024), incluyendo limpieza, transformación de fechas y estructuración de datos para análisis temporal.
-Análisis exploratorio de datos (EDA) para evaluar tendencias, estacionalidad y correlaciones.
-Pruebas estadísticas de estacionariedad como Dickey-Fuller aumentado (ADF) y diferenciación para estabilización de varianza.
-**Modelado y predicción:**
-Modelos estadísticos: Implementación de modelos ARIMA y SARIMA para la predicción de precios, optimización de parámetros mediante ACF/PACF y evaluación de criterios como AIC/BIC.
-Machine Learning: Uso de NeuralProphet para combinar modelos autorregresivos y capacidades de aprendizaje profundo, mejorando la precisión de predicciones a largo plazo.
-Holt-Winters: Suavizado exponencial para análisis de tendencias y patrones estacionales.
-Evaluación de modelos mediante métricas clave: MSE, RMSE, MAE y MAPE.
-**Visualización y comunicación:
-Generación de gráficos de tendencias, medias móviles, componentes estacionales y predicciones futuras.
-Evaluación de residuos para diagnóstico de modelo y validación de supuestos estadísticos.
-**Tecnologías utilizadas:**
-Lenguajes y herramientas: Python, NeuralProphet, Statsmodels, Pandas, NumPy, Matplotlib, Seaborn.
-Bibliotecas específicas: Scipy, TensorFlow/Keras, Statsmodels, Pmdarima.
-Técnicas: Modelos autorregresivos, pruebas estadísticas, suavizado exponencial, descomposición estacional.
+Se combinan técnicas de análisis exploratorio, modelos ARIMA y NeuralProphet para estudiar tendencias, estacionalidad y realizar predicciones de precios futuros.
 
-***Resultados clave:***
-Predicciones precisas de precios futuros, proporcionando información útil para la toma de decisiones financieras.
-Creación de un pipeline reproducible para el análisis y pronóstico de series temporales complejas.
-Identificación de patrones estacionales y tendencias de largo plazo para Meta Platforms.
+## 🧠Objetivos del proyecto
+
+- Analizar el comportamiento histórico del precio de las acciones de Meta.
+- Evaluar tendencias, estacionalidad y estacionariedad de la serie temporal.
+- Construir y comparar modelos de pronóstico:
+- Modelos estadísticos clásicos (ARIMA).
+- Modelos de Deep Learning para series temporales (NeuralProphet).
+- Generar pronósticos y evaluar su desempeño mediante métricas de error.
+
+## 📊Dataset
+
+El conjunto de datos contiene información histórica de las acciones de Meta Platforms Inc. durante los últimos 12 años.
+
+Columnas principales:
+- Date: Fecha de cotización
+- Open: Precio de apertura
+- High: Precio máximo diario
+- Low: Precio mínimo diario
+- Close: Precio de cierre
+- Adj Close: Precio de cierre ajustado
+- Volume: Volumen de negociación
+
+Los datos permiten realizar análisis históricos, estudiar patrones temporales y construir modelos de predicción financiera.
+
+## 🔍Metodología
+
+1️⃣ Análisis Exploratorio de Datos (EDA)
+- Visualización de precios históricos.
+- Análisis de tendencia y estacionalidad (mensual y anual).
+- Diagramas de caja y subseries estacionales.
+- Descomposición de la serie temporal.
+
+2️⃣ Análisis de Estacionariedad
+- Prueba de Dickey-Fuller Aumentada (ADF).
+- Transformaciones logarítmicas.
+- Diferenciación de la serie para lograr estacionariedad.
+- Análisis ACF y PACF.
+
+3️⃣ Modelos Estadísticos
+- Selección automática de parámetros con auto_arima.
+- Implementación de modelos ARIMA (1,1,1).
+- Diagnóstico de residuos.
+- Evaluación con métricas:
+- MSE
+- MAE
+- RMSE
+- MAPE
+
+4️⃣ Deep Learning para Series Temporales
+- Implementación de NeuralProphet (basado en PyTorch).
+- Modelado de:
+- Tendencia
+- Estacionalidad
+- Dependencias temporales no lineales
+
+- Visualización de:
+  - Ajuste a datos históricos
+  - Predicciones futuras
+  - Componentes del modelo
+
+## 🧪Resultados
+
+- Los modelos ARIMA capturan adecuadamente la estructura temporal básica, aunque presentan residuos con heterocedasticidad.
+- NeuralProphet permite capturar patrones más complejos y no lineales.
+- Se observan indicios de estacionalidad anual, aunque algunos efectos pueden estar influenciados por eventos extraordinarios (COVID-19, reestructuración de Meta, inversiones en VR).
+
+## ⚠️Nota: Este proyecto tiene fines educativos y analíticos. No constituye recomendación financiera.
+
+## 🛠️Tecnologías y Librerías
+
+- Python
+- Pandas / NumPy
+- Matplotlib / Seaborn
+- Statsmodels
+- pmdarima
+- Scikit-learn
+- NeuralProphet (PyTorch)
+
+## 📁Estructura del proyecto
+
+├── Meta Dataset.csv
+├── meta_stock_analysis.py
+└── README.md
+
+## 📌Próximos pasos / Mejoras posibles
+
+- Incorporar modelos GARCH para modelar volatilidad.
+- Comparar con modelos LSTM o Transformers.
+- Backtesting más robusto.
+- Incorporar variables macroeconómicas externas.
+
+## 👤Autor
+
+Flavia Hepp
+Proyecto de análisis y pronóstico de series temporales aplicado a mercados financieros.
